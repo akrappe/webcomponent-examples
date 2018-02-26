@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h:t,Context:e}=window.App;class r{render(){return t("div",{class:"custom"},t("h2",null,this.name),t("a",{href:this.url,target:"_blank"},t("img",{src:this.image,alt:"Image of "+this.name})))}static get is(){return"custom-component"}static get properties(){return{image:{type:String,attr:"image"},name:{type:String,attr:"name"},url:{type:String,attr:"url"}}}static get style(){return".custom{color:green}"}}export{r as CustomComponent};

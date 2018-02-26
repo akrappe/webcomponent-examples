@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+</head>
+<body>
+
+<article class="main">
+    <h1>Web Component data binding (simple)</h1>
+    <p>Data is directly bound by adding parameters to the custom element</p>
+
+    <pre>
+&lt;template id=&quot;custom-component&quot;&gt;
+   &lt;h2 data-bind=&quot;headline&quot;&gt;Default Headline&lt;/h2&gt;
+&lt;/template&gt;
+
+&lt;custom-component&gt;&lt;/custom-component&gt;
+&lt;custom-component headline=&quot;Simple Data Binding Headline&quot;&gt;&lt;/custom-component&gt;
+&lt;custom-component headline=&quot;Some other headline set by custom element attribute&quot;&gt;&lt;/custom-component&gt;
+    </pre>
+
+    <template id="custom-component">
+       <h2 data-bind="headline">Default Headline</h2>
+    </template>
+
+    <custom-component></custom-component>
+    <custom-component headline="Simple Data Binding Headline"></custom-component>
+    <custom-component headline="Some other headline set by custom element attribute"></custom-component>
+
+    <pre data-src="src/custom-component.js"></pre>
+</article>
+
+<script>
+    window.loadScriptsWhenReady('src/custom-component.js');
+</script>
+
+</body>
+</html>

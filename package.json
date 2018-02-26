@@ -1,0 +1,48 @@
+{
+  "name": "webcomponents",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "static-server",
+    "build": "yarn build-05-01 && yarn build-05-02 && yarn build-06-01 && yarn build-06-02 && yarn build-07-01",
+    "build-05-01": "tsc --p 05-transpilers-bundlers/01-typescript-es5",
+    "build-05-02": "tsc --p 05-transpilers-bundlers/02-typescript-es6",
+    "build-05-03": "browserify 05-transpilers-bundlers/03-browserify/src/custom-component.ts -p [ tsify --target=ES6 ] > 05-transpilers-bundlers/03-browserify/dist/custom-component.js",
+    "build-06-01": "webpack --config 06-frameworks/01-skatejs-preact/webpack.config.js",
+    "build-06-02": "cd 06-frameworks/02-stencil-jsx && stencil build --prerender",
+    "build-06-03": "browserify 06-frameworks/03-slimjs/src/custom-component.ts -p [ tsify --project 06-frameworks/03-slimjs ] > 06-frameworks/03-slimjs/dist/custom-component.js",
+    "build-07-01": "webpack --config 07-demo-components/01-demo-slider/webpack.config.js"
+  },
+  "dependencies": {
+    "@skatejs/renderer-preact": "^0.2.0",
+    "@stencil/core": "^0.5.2",
+    "@webcomponents/webcomponentsjs": "^1.1.0",
+    "handlebars": "^4.0.11",
+    "preact": "^8.2.7",
+    "react": "^16.2.0",
+    "skatejs": "^5.1.1",
+    "slim-js": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "@types/skatejs": "^5.0.0",
+    "@types/webcomponents.js": "^0.6.32",
+    "awesome-typescript-loader": "^3.4.1",
+    "browserify": "^16.1.0",
+    "css-loader": "^0.28.9",
+    "node-sass": "^4.7.2",
+    "path": "^0.12.7",
+    "sass-loader": "^6.0.6",
+    "static-server": "^3.0.0",
+    "style-loader": "^0.20.2",
+    "to-string-loader": "^1.1.5",
+    "tsify": "^3.0.4",
+    "tslib": "^1.9.0",
+    "typescript": "^2.7.1",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.11.0",
+    "webpack-bundle-analyzer": "^2.10.0"
+  }
+}

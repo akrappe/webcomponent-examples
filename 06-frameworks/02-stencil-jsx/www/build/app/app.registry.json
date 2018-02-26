@@ -1,0 +1,12 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "core": "app.qui07g2v.js",
+  "corePolyfilled": "app.kuro4mu9.js",
+  "components": {
+    "custom-component": {
+      "$": "suxz5o5n"
+    }
+  }
+}

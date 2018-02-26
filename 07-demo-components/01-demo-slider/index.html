@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!--additional polyfill needed to execute custom elements in ES5 environment-->
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+</head>
+<body>
+
+<article class="main">
+    <h1>Simple Slider Demo</h1>
+    <custom-component></custom-component>
+    <pre data-src="src/custom-component.ts"></pre>
+</article>
+
+<script>
+    window.loadScriptsWhenReady('dist/custom-component.js');
+</script>
+
+</body>
+</html>

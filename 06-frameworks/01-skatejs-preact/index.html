@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!--additional polyfill needed to execute custom elements in ES5 environment-->
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+</head>
+<body>
+
+<article class="main">
+    <h1>Web Component with SkateJS and Preact template engine</h1>
+    <p>
+        See <a href="https://skatejs.netlify.com/" target="_blank">SkateJS Website</a>
+    </p>
+
+    <custom-component
+            name="Steve Jobs"
+            url="https://de.wikipedia.org/wiki/Steve_Jobs"
+            image="https://cdn.macrumors.com/article-new/2017/10/steve-jobs-800x533.jpg"
+    ></custom-component>
+
+    <pre data-src="src/custom-component.tsx"></pre>
+</article>
+
+<script>
+    window.loadScriptsWhenReady('dist/custom-component.min.js');
+</script>
+
+</body>
+</html>

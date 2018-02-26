@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        h2 { color: lightblue; }
+        h3 { color: lightgreen; }
+    </style>
+
+    <script src="../../lib/loader.js"></script>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+</head>
+<body>
+
+    <h2>Custom Element styling - No Shadow DOM used here</h2>
+    <h3>Globally styled headline</h3>
+    <p>
+        The H2 and H3 headlines above are affected by the global styles defined in the head section.<br>
+        The Web Components' H2 headline is affected by its' own styling and the H3 headline has no styles at all, so it falls back to global styling.<br><br>
+        <strong>Important: this example does NOT use the Shadow DOM!</strong>
+    </p>
+
+    <pre>
+&lt;template id=&quot;custom-component&quot;&gt;
+    &lt;style&gt;
+        .customComponent {
+            display: inline-block;
+            border: 1px solid red;
+            padding: 10px;
+        }
+        .customComponent h2 {
+            color: lightcoral;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;customComponent&quot;&gt;
+        &lt;h2&gt;H2 headline has own Custom Element styling&lt;/h2&gt;
+        &lt;h3&gt;H3 headline is affected by global styling&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+    </pre>
+
+    <template id="custom-component">
+        <style>
+            .customComponent {
+                display: inline-block;
+                border: 1px solid red;
+                padding: 10px;
+            }
+            .customComponent h2 {
+                color: lightcoral;
+            }
+        </style>
+        <div class="customComponent">
+            <h2>H2 headline has own Custom Element styling</h2>
+            <h3>H3 headline is affected by global styling</h3>
+        </div>
+    </template>
+
+    <custom-component></custom-component>
+
+    <script>
+        window.loadScriptsWhenReady('src/custom-component.js');
+    </script>
+
+</body>
+</html>

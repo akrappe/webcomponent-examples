@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!-- Debug loading time of demo components -->
+    <script>
+        window.startingTime = Date.now();
+    </script>
+
+    <!-- Preload web component script -->
+    <link rel="preload" href="src/preload-component.js" as="script">
+
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+
+    <!-- Official Web Components Polyfill Loader -->
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+</head>
+<body>
+<article class="main">
+    <h1>Web Component polyfills and preloading demo</h1>
+
+    <custom-component></custom-component>
+    <preload-component></preload-component>
+
+    <pre data-src="../../lib/loader.js"></pre>
+</article>
+
+<script>
+    window.loadScriptsWhenReady([
+        'src/custom-component.js',
+        'src/preload-component.js'
+    ]);
+</script>
+
+</body>
+</html>

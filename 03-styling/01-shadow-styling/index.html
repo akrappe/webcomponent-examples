@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!-- Simple global headline stylings -->
+    <style>
+        h2 { color: lightblue; }
+        h3 { color: lightgreen; }
+    </style>
+
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+</head>
+<body>
+
+<article class="main">
+    <h2>Web Component styling inside and outside of the Shadow DOM</h2>
+    <h3>Globally styled headline</h3>
+    <p>
+        The H2 and H3 headlines above are affected by the global styles defined in the head section.<br>
+        The Web Components' H2 headline is affected by its' own styling and the H3 headline has no styles at all.<br><br>
+        <strong>Important: global styles do NOT affect the styles of elements inside the Shadow DOM!</strong>
+    </p>
+
+    <pre>
+&lt;template id=&quot;custom-component&quot;&gt;
+    &lt;style&gt;
+        h2 {
+            color: lightcoral;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;customComponent&quot;&gt;
+        &lt;h2&gt;Inline template custom component&lt;/h2&gt;
+        &lt;h3&gt;Headline is (un)affected of global styling&lt;/h3&gt;
+        &lt;p&gt;This is only true for browsers supporting native Shadow DOM. If the headline above is green, your browser doesn't support Shadow DOM yet.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+    </pre>
+
+    <template id="custom-component">
+        <style>
+            h2 {
+                color: lightcoral;
+            }
+        </style>
+        <div class="customComponent">
+            <h2>Inline template custom component</h2>
+            <h3>Headline is (un)affected of global styling</h3>
+            <p>This is only true for browsers supporting native Shadow DOM. If the headline above is green, your browser doesn't support Shadow DOM yet.</p>
+        </div>
+    </template>
+
+    <custom-component></custom-component>
+</article>
+
+<script>
+    window.loadScriptsWhenReady('src/custom-component.js');
+</script>
+
+</body>
+</html>
