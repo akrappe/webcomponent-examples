@@ -1,31 +1,27 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "jsx": "preserve",
-    "jsxFactory": "jsx",
     "lib": [
       "dom",
       "esnext"
     ],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "noEmitHelpers": true,
-    "outDir": "./dist/",
     "pretty": true,
     "removeComments": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext",
+    "target": "es5",
     "typeRoots": [
-      "node_modules/@types",
-      "node_modules/slim-js"
+      "node_modules/@types"
     ]
   },
   "include": [
     "src/**/*.tsx",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.css"
   ],
   "exclude": [
     "dist",
