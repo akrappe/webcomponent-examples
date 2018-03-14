@@ -13,17 +13,16 @@
     "build-06-01": "webpack --config 06-frameworks/01-skatejs-preact/webpack.config.js",
     "build-06-02": "cd 06-frameworks/02-stencil-jsx && stencil build --prerender",
     "build-06-03": "webpack --config 06-frameworks/03-slimjs/webpack.config.js",
-    "build-06-04": "webpack --config 06-frameworks/04-polymer/webpack.config.js",
     "build-07-01": "webpack --config 07-demo-components/01-demo-slider/webpack.config.js",
     "build-07-02": "webpack --config 07-demo-components/02-feature-mix/webpack.config.js"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.0-pre.10",
     "@skatejs/renderer-preact": "^0.2.0",
     "@stencil/core": "^0.5.2",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "babel-preset-env": "^1.6.1",
     "handlebars": "^4.0.11",
+    "hyperhtml": "^2.6.0",
     "preact": "^8.2.7",
     "react": "^16.2.0",
     "skatejs": "^5.1.1",

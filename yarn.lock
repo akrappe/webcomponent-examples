@@ -458,13 +458,6 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@polymer/polymer@^3.0.0-pre.10":
-  version "3.0.0-pre.10"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.10.tgz#ffecc8cfac05546467b8913c73b7a9caf2a990c2"
-  dependencies:
-    "@webcomponents/shadycss" "^1.0.0"
-    "@webcomponents/webcomponentsjs" "^1.0.0"
-
 "@skatejs/renderer-preact@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@skatejs/renderer-preact/-/renderer-preact-0.2.0.tgz#d9fefb632be36f5370304a909a8b6e25989f4994"
@@ -497,11 +490,7 @@
   version "0.6.32"
   resolved "https://registry.yarnpkg.com/@types/webcomponents.js/-/webcomponents.js-0.6.32.tgz#aba4bbfcb6889205aa8f8e0adec0bfc595b4f6cd"
 
-"@webcomponents/shadycss@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.1.1.tgz#abc821961c99a2b1c5e0f225cd01b139899ebc4c"
-
-"@webcomponents/webcomponentsjs@^1.0.0", "@webcomponents/webcomponentsjs@^1.1.0":
+"@webcomponents/webcomponentsjs@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.1.0.tgz#1392799c266fca142622a720176f688beb74d181"
 
@@ -3618,6 +3607,12 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
+hyperhtml@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.6.0.tgz#4b6cc50fdc9354264880dda522546ac24b3a4b20"
+  dependencies:
+    lightercollective "^0.0.3"
+
 iconv-lite@0.4.19, iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -4298,6 +4293,10 @@ liftoff@^2.1.0:
     object.map "^1.0.0"
     rechoir "^0.6.2"
     resolve "^1.1.7"
+
+lightercollective@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.0.3.tgz#c58f01fde36f4d9432eda354c635a192fc291b2b"
 
 load-json-file@^1.0.0:
   version "1.1.0"
