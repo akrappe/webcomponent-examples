@@ -1,19 +1,18 @@
 const {resolve} = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     context: resolve(__dirname, 'src'),
     entry: {
         "custom-component": './custom-component.js',
-        "custom-component.min": './custom-component.js'
+        "state": './vanillux/state.js'
     },
     output: {
         filename: '[name].js',
         path: resolve(__dirname, 'dist'),
     },
     resolve: {
-        extensions: ['.css', '.js']
+        extensions: ['.js']
     },
     devtool: 'source-map',
     module: {
@@ -27,17 +26,10 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            },
-            {
-                test: /\.css$/,
-                use: [ 'to-string-loader', 'css-loader' ]
             }
         ]
     },
     plugins: [
-        new UglifyJSPlugin({
-            include: /\.min\.js$/
-        })
-        // ,new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ]
 };

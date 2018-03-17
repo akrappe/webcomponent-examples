@@ -10,12 +10,17 @@
 
     <!--additional polyfill needed to execute custom elements in ES5 environment-->
     <script src="../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <script src="dist/state.js"></script>
 </head>
 <body>
 
 <article class="main">
     <h1>Feature Mix Demo</h1>
+    <p>Some other component changing the state: <a href="#" onclick="document.dispatchEvent(new CustomEvent('action', { detail: { type: 'COUNT_UP' }}));return false;">Count Up</a></p>
+
     <custom-component></custom-component>
+
     <pre data-src="src/custom-component.js"></pre>
 </article>
 

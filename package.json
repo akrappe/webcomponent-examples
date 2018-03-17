@@ -6,6 +6,7 @@
   "scripts": {
     "start": "static-server",
     "build": "yarn build-05-01 && yarn build-05-02 && yarn build-06-01 && yarn build-06-02 && yarn build-07-01",
+    "build-04-04": "webpack --config 04-data-events/04-state-simple/webpack.config.js",
     "build-05-01": "tsc --p 05-transpilers-bundlers/01-typescript-es5",
     "build-05-02": "tsc --p 05-transpilers-bundlers/02-typescript-es6",
     "build-05-03": "browserify 05-transpilers-bundlers/03-browserify/src/custom-component.ts -p [ tsify --target=ES6 ] > 05-transpilers-bundlers/03-browserify/dist/custom-component.js",
