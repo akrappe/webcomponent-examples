@@ -103,11 +103,9 @@ function _wrapNativeSuper(Class) { if (typeof Class !== "function") { throw new 
       _classCallCheck(this, CustomComponent);
 
       _this = _possibleConstructorReturn(this, (CustomComponent.__proto__ || Object.getPrototypeOf(CustomComponent)).call(this));
-
-      _this.attachShadow({
-        mode: 'open'
+      _this._shadowRoot = _this.attachShadow({
+        mode: 'closed'
       });
-
       return _this;
     }
 
@@ -124,8 +122,9 @@ function _wrapNativeSuper(Class) { if (typeof Class !== "function") { throw new 
     }, {
       key: "render",
       value: function render(e) {
-        this.shadowRoot.innerHTML = "<button>Count Up</button> <span>".concat(e.detail.counter, "</span>");
-        this.shadowRoot.querySelector('button').addEventListener('click', function () {
+        this._shadowRoot.innerHTML = "<button>Count Up</button> <span>".concat(e.detail.counter, "</span>");
+
+        this._shadowRoot.querySelector('button').addEventListener('click', function () {
           document.dispatchEvent(new CustomEvent('action', {
             detail: {
               type: 'COUNT_UP'

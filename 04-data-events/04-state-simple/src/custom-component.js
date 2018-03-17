@@ -4,7 +4,7 @@
     class CustomComponent extends HTMLElement {
         constructor() {
             super();
-            this.attachShadow({mode: 'open'});
+            this._shadowRoot = this.attachShadow({mode: 'closed'});
         }
 
         connectedCallback() {
@@ -13,9 +13,9 @@
         }
 
         render(e) {
-            this.shadowRoot.innerHTML = `<button>Count Up</button> <span>${e.detail.counter}</span>`;
+            this._shadowRoot.innerHTML = `<button>Count Up</button> <span>${e.detail.counter}</span>`;
 
-            this.shadowRoot.querySelector('button').addEventListener('click', () => {
+            this._shadowRoot.querySelector('button').addEventListener('click', () => {
                 document.dispatchEvent(new CustomEvent('action', { detail: { type: 'COUNT_UP' }}));
             });
         }
