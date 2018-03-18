@@ -7,6 +7,7 @@
     "start": "static-server",
     "build": "yarn build-05-01 && yarn build-05-02 && yarn build-06-01 && yarn build-06-02 && yarn build-07-01",
     "build-04-04": "webpack --config 04-data-events/04-state-simple/webpack.config.js",
+    "build-04-05": "webpack --config 04-data-events/05-attribute-callback/webpack.config.js",
     "build-05-01": "tsc --p 05-transpilers-bundlers/01-typescript-es5",
     "build-05-02": "tsc --p 05-transpilers-bundlers/02-typescript-es6",
     "build-05-03": "browserify 05-transpilers-bundlers/03-browserify/src/custom-component.ts -p [ tsify --target=ES6 ] > 05-transpilers-bundlers/03-browserify/dist/custom-component.js",
@@ -14,6 +15,7 @@
     "build-06-01": "webpack --config 06-frameworks/01-skatejs-preact/webpack.config.js",
     "build-06-02": "cd 06-frameworks/02-stencil-jsx && stencil build --prerender",
     "build-06-03": "webpack --config 06-frameworks/03-slimjs/webpack.config.js",
+    "build-06-04": "webpack --config 06-frameworks/04-hyperhtml/webpack.config.js --watch",
     "build-07-01": "webpack --config 07-demo-components/01-demo-slider/webpack.config.js",
     "build-07-02": "webpack --config 07-demo-components/02-feature-mix/webpack.config.js"
   },

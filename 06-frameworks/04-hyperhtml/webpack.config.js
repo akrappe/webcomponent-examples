@@ -1,10 +1,12 @@
 const {resolve} = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     context: resolve(__dirname, 'src'),
     entry: {
         "custom-component": './custom-component.js',
+        "custom-component.min": './custom-component.js',
         "state": './vanillux/state.js'
     },
     output: {
@@ -30,6 +32,9 @@ module.exports = {
         ]
     },
     plugins: [
-        // new BundleAnalyzerPlugin()
+        new UglifyJSPlugin({
+            include: /\.min\.js$/
+        })
+        // ,new BundleAnalyzerPlugin()
     ]
 };
