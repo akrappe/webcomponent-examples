@@ -1,4 +1,5 @@
-import {hyper} from 'hyperhtml/esm';
+import {bind} from 'hyperhtml/esm';
+import tpl from './template';
 
 (function () {
     'use strict';
@@ -6,7 +7,7 @@ import {hyper} from 'hyperhtml/esm';
     class CustomComponent extends HTMLElement {
         constructor(...args) {
             super(...args);
-            this.html = hyper.bind(this.attachShadow({mode: 'closed'}));
+            this.html = bind(this);
         }
 
         connectedCallback() {
@@ -23,10 +24,7 @@ import {hyper} from 'hyperhtml/esm';
         }
 
         render() {
-            return this.html`
-<button onclick=${this.countUp}>Count Up</button>
-<span>${this.counter}</span>
-`;
+            return tpl(this);
         }
     }
 

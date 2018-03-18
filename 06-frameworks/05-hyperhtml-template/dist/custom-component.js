@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -234,7 +234,7 @@ const trim = __WEBPACK_IMPORTED_MODULE_0__constants_js__["k" /* UID */].trim || 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__re_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__re_js__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__features_detection_js__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__easy_dom_js__ = __webpack_require__(1);
@@ -413,6 +413,77 @@ const SVGFragment = __WEBPACK_IMPORTED_MODULE_2__features_detection_js__["b" /* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bind", function() { return bind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "define", function() { return define; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hyper", function() { return hyper; });
+/* harmony export (immutable) */ __webpack_exports__["default"] = hyper;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__objects_Intent_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hyper_render_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__ = __webpack_require__(10);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "diff", function() { return __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "wire", function() { return __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["b"]; });
+/*! (c) Andrea Giammarchi (ISC) */
+
+
+
+
+
+
+
+// all functions are self bound to the right context
+// you can do the following
+// const {bind, wire} = hyperHTML;
+// and use them right away: bind(node)`hello!`;
+const bind = context => __WEBPACK_IMPORTED_MODULE_3__hyper_render_js__["a" /* default */].bind(context);
+const define = __WEBPACK_IMPORTED_MODULE_1__objects_Intent_js__["a" /* default */].define;
+
+hyper.Component = __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["a" /* default */];
+hyper.bind = bind;
+hyper.define = define;
+hyper.diff = __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__["a" /* default */];
+hyper.hyper = hyper;
+hyper.wire = __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["b" /* default */];
+
+// the wire content is the lazy defined
+// html or svg property of each hyper.Component
+Object(__WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["b" /* setup */])(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */]);
+
+// everything is exported directly or through the
+// hyperHTML callback, when used as top level script
+
+
+// by default, hyperHTML is a smart function
+// that "magically" understands what's the best
+// thing to do with passed arguments
+function hyper(HTML) {
+  return arguments.length < 2 ?
+    (HTML == null ?
+      Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html') :
+      (typeof HTML === 'string' ?
+        hyper.wire(null, HTML) :
+        ('raw' in HTML ?
+          Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html')(HTML) :
+          ('nodeType' in HTML ?
+            hyper.bind(HTML) :
+            Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["c" /* weakly */])(HTML, 'html')
+          )
+        )
+      )) :
+    ('raw' in HTML ?
+      Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html') : hyper.wire
+    ).apply(null, arguments);
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = Component;
 /* harmony export (immutable) */ __webpack_exports__["b"] = setup;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_constants_js__ = __webpack_require__(0);
@@ -514,7 +585,7 @@ const lazyGetter = (type, fn) => {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -552,7 +623,7 @@ let length = 0;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -582,7 +653,7 @@ const selfClosing = new RegExp(
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -623,7 +694,7 @@ Wire.prototype.remove = function remove() {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -631,7 +702,7 @@ Wire.prototype.remove = function remove() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_constants_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_Updates_js__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_utils_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_re_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_re_js__ = __webpack_require__(7);
 
 
 
@@ -711,7 +782,7 @@ const SC_PLACE = ($0, $1, $2) => {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -834,19 +905,19 @@ const domdiff = (
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _esm = __webpack_require__(11);
+var _esm = __webpack_require__(4);
 
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n<button onclick=", ">Count Up</button>\n<span>", "</span>\n"], ["\n<button onclick=", ">Count Up</button>\n<span>", "</span>\n"]);
+var _template = _interopRequireDefault(__webpack_require__(17));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -857,6 +928,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 var _gPO = Object.getPrototypeOf || function _gPO(o) { return o.__proto__; };
 
@@ -888,9 +961,7 @@ function _wrapNativeSuper(Class) { if (typeof Class !== "function") { throw new 
       }
 
       _this = _possibleConstructorReturn(this, (_ref = CustomComponent.__proto__ || Object.getPrototypeOf(CustomComponent)).call.apply(_ref, [this].concat(args)));
-      _this.html = _esm.hyper.bind(_this.attachShadow({
-        mode: 'closed'
-      }));
+      _this.html = (0, _esm.bind)(_assertThisInitialized(_this));
       return _this;
     }
 
@@ -918,7 +989,7 @@ function _wrapNativeSuper(Class) { if (typeof Class !== "function") { throw new 
     }, {
       key: "render",
       value: function render() {
-        return this.html(_templateObject, this.countUp, this.counter);
+        return (0, _template.default)(this);
       }
     }]);
 
@@ -932,77 +1003,6 @@ function _wrapNativeSuper(Class) { if (typeof Class !== "function") { throw new 
 })();
 
 /***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bind", function() { return bind; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "define", function() { return define; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hyper", function() { return hyper; });
-/* harmony export (immutable) */ __webpack_exports__["default"] = hyper;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__objects_Intent_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hyper_render_js__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__ = __webpack_require__(9);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "diff", function() { return __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "wire", function() { return __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["b"]; });
-/*! (c) Andrea Giammarchi (ISC) */
-
-
-
-
-
-
-
-// all functions are self bound to the right context
-// you can do the following
-// const {bind, wire} = hyperHTML;
-// and use them right away: bind(node)`hello!`;
-const bind = context => __WEBPACK_IMPORTED_MODULE_3__hyper_render_js__["a" /* default */].bind(context);
-const define = __WEBPACK_IMPORTED_MODULE_1__objects_Intent_js__["a" /* default */].define;
-
-hyper.Component = __WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["a" /* default */];
-hyper.bind = bind;
-hyper.define = define;
-hyper.diff = __WEBPACK_IMPORTED_MODULE_4__shared_domdiff_js__["a" /* default */];
-hyper.hyper = hyper;
-hyper.wire = __WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["b" /* default */];
-
-// the wire content is the lazy defined
-// html or svg property of each hyper.Component
-Object(__WEBPACK_IMPORTED_MODULE_0__classes_Component_js__["b" /* setup */])(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */]);
-
-// everything is exported directly or through the
-// hyperHTML callback, when used as top level script
-
-
-// by default, hyperHTML is a smart function
-// that "magically" understands what's the best
-// thing to do with passed arguments
-function hyper(HTML) {
-  return arguments.length < 2 ?
-    (HTML == null ?
-      Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html') :
-      (typeof HTML === 'string' ?
-        hyper.wire(null, HTML) :
-        ('raw' in HTML ?
-          Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html')(HTML) :
-          ('nodeType' in HTML ?
-            hyper.bind(HTML) :
-            Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["c" /* weakly */])(HTML, 'html')
-          )
-        )
-      )) :
-    ('raw' in HTML ?
-      Object(__WEBPACK_IMPORTED_MODULE_2__hyper_wire_js__["a" /* content */])('html') : hyper.wire
-    ).apply(null, arguments);
-}
-
-
-/***/ }),
 /* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1013,8 +1013,8 @@ function hyper(HTML) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_poorlyfills_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_easy_dom_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_utils_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_Wire_js__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__render_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_Wire_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__render_js__ = __webpack_require__(9);
 
 
 
@@ -1155,12 +1155,12 @@ const hasImportNode = 'importNode' in document;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_constants_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_Component_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_Wire_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_Component_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_Wire_js__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Path_js__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Style_js__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Intent_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_domdiff_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Intent_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_domdiff_js__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_easy_dom_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_poorlyfills_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_utils_js__ = __webpack_require__(3);
@@ -1807,6 +1807,30 @@ const toStyle = object => {
   }
   return css.join('');
 };
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _esm = __webpack_require__(4);
+
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n\n<button onclick=", ">Count Up</button>\n<span>", "</span>\n\n"], ["\n\n<button onclick=", ">Count Up</button>\n<span>", "</span>\n\n"]);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var _default = function _default(elem) {
+  return (0, _esm.bind)(elem)(_templateObject, elem.countUp, elem.counter);
+};
+
+exports.default = _default;
 
 /***/ })
 /******/ ]);

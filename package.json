@@ -15,7 +15,8 @@
     "build-06-01": "webpack --config 06-frameworks/01-skatejs-preact/webpack.config.js",
     "build-06-02": "cd 06-frameworks/02-stencil-jsx && stencil build --prerender",
     "build-06-03": "webpack --config 06-frameworks/03-slimjs/webpack.config.js",
-    "build-06-04": "webpack --config 06-frameworks/04-hyperhtml/webpack.config.js --watch",
+    "build-06-04": "webpack --config 06-frameworks/04-hyperhtml/webpack.config.js",
+    "build-06-05": "webpack --config 06-frameworks/05-hyperhtml-template/webpack.config.js",
     "build-07-01": "webpack --config 07-demo-components/01-demo-slider/webpack.config.js",
     "build-07-02": "webpack --config 07-demo-components/02-feature-mix/webpack.config.js"
   },
