@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../../lib/styles.css">
+    <script src="../../lib/loader.js"></script>
+    <script src="../../lib/prism.min.js"></script>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!--additional polyfill needed to execute custom elements in ES5 environment-->
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <script src="dist/state.js"></script>
+</head>
+<body>
+
+<article class="main">
+    <h1>SSR Demo</h1>
+    <p>This demo simulates a component that was initially rendered on the server</p>
+    <ol>
+        <li>Generated markup was added to the custom component</li>
+        <li>Script loading the custom component was added to the custom component</li>
+        <li>Web Component overwrites the given markup and adds JS logic</li>
+    </ol>
+
+    <custom-component>
+        <button>Count Up</button>
+        <span>0</span>
+        <script>
+            // delayed by 2000ms to show what is happening
+            setTimeout(() => {
+                window.loadScriptsWhenReady('dist/custom-component.js');
+            }, 2000);
+        </script>
+    </custom-component>
+
+    <pre data-src="src/custom-component.js"></pre>
+</article>
+
+</body>
+</html>
